@@ -1,0 +1,18 @@
+# Полезные ссылки
+
+- [Документация Helm](https://helm.sh/)
+
+# Команды helm
+
+- `helm repo add jenkins https://charts.jenkins.io`
+- `helm search repo jenkins`
+- `helm show --help`
+- `helm show values jenkins/jenkins`
+- `helm pull jenkins/jenkins --untar --version 3.12.2`
+- `helm install jenkins jenkins -n jenkins`
+- `helm ls -n jenkins`
+- `helm upgrade jenkins jenkins/jenkins --version 4.2.8 -n jenkins`
+- `helm history jenkins -n jenkins`
+- `helm rollback wcg`
+- `helm rollback wcg 3`
+- `helm template wcg .`
