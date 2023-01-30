@@ -2,12 +2,13 @@
 
 - В репозитории с домашними заданиями создайте каталог `12-kubernetes`
 - Создайте манифесты для следующих объектов:
-  - Deployment для запуска в k8s кластере приложения word-cloud-generator из вашего образа wcg, хранящегося в GitHub registry (ghcr.io)(Дз 11). Необходимо использовать ImagePullSecret для загрузки образа из GitHub registry.** ImagePullPolicy должно быть always.
+  - Namespace, имя которого должно содержать в качестве префикса ваше имя или фамилию или никнейм.
+  - Deployment для запуска в k8s кластере приложения word-cloud-generator из вашего образа wcg, хранящегося в GitHub registry (ghcr.io)(Дз 11). 
+    - Необходимо использовать ImagePullSecret для загрузки образа из GitHub registry. Имя секрета должно быть `github-pull-secret`. Сам секрет сохранять в манифестах не надо.
+    - ImagePullPolicy должно быть always.
   - Service для доступа к приложению
   - Ingress для доступа к приложению снаружи кластера
-
-## Примечания
-** ImagePullSecret сохранять в манифесте не надо
+- Создайте kustomization файл, который создаст все ресурсы в отдельном неймспейсе, включая сам неймспейс.
 
 # Полезные ссылки
 
@@ -18,6 +19,8 @@
 - [CSI drivers](https://kubernetes-csi.github.io/docs/drivers.html)
 - [kubectx Linux](https://github.com/ahmetb/kubectx)
 - [kubenswin Windows](https://github.com/thomasliddledba/kubenswin)
+- [Kustomize](https://kubernetes.io/docs/tasks/manage-kubernetes-objects/kustomization/)
+- [Kustomization file](https://kubectl.docs.kubernetes.io/references/kustomize/kustomization/)
 
 # Команды minikube & kubectl
 - `minikube start`
